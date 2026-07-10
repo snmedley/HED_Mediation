@@ -1,0 +1,3 @@
+# Pin exact versions from day one, e.g.:
+# numpy==2.1.0
+# pandas==2.2.3

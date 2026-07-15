@@ -1,0 +1,172 @@
+% main-causal.tex — Dempsey Lab manuscript template (JASA-style article)
+% ESTIMAND-DRIVEN CAUSAL structure: Setup and Estimand / Identification /
+% Estimation. For general methods papers use main.tex instead (Intro w/
+% Contributions, Related Work, Method: Notation / Core method / Theory).
+% Keep one, delete the other, and name the keeper main.tex. Comments
+% explain what belongs in each section.
+\documentclass[12pt]{article}
+
+\usepackage{amsmath, amssymb, mathtools}
+\usepackage{amsthm}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{pgfplots}
+\usepackage[shortlabels]{enumitem}
+\usepackage{xcolor}
+\usepackage{natbib}
+\usepackage{float}
+\usepackage[parfill]{parskip}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{bbm, bm}
+\usepackage{amsfonts}
+
+% Shared lab notation (operators, sequential-decision macros, theorem
+% environments). Load BEFORE the newtx fonts. Do not redefine its macros.
+\usepackage{lab-notation}
+
+\usepackage{newtxtext}
+\usepackage[subscriptcorrection]{newtxmath}
+
+% DON'T change margins - should be 1 inch all around.
+\addtolength{\oddsidemargin}{-.5in}%
+\addtolength{\evensidemargin}{-.5in}%
+\addtolength{\textwidth}{1in}%
+\addtolength{\textheight}{-.3in}%
+\addtolength{\topmargin}{-.8in}%
+
+% NOTE: To produce blinded version, replace "0" with "1" below.
+\newcommand{\blind}{0}
+
+\def\spacingset#1{\renewcommand{\baselinestretch}{#1}\small\normalsize}
+\spacingset{1}
+
+\pgfplotsset{compat=1.18}
+
+\begin{document}
+
+\if1\blind
+{
+  \title{\bf [Project Title]}
+  \author{Author 1\thanks{The authors gratefully acknowledge relevant funding sources in the unblinded version.}\\
+    Department of Statistics}
+  \maketitle
+} \fi
+
+\if0\blind
+{
+  \bigskip
+  \bigskip
+  \bigskip
+  \begin{center}
+    {\LARGE\bf [Project Title]}
+
+    \medskip
+    [DRI] and W. Dempsey
+
+    Department of Biostatistics, University of Michigan, Ann Arbor, U.S.A.
+  \end{center}
+  \medskip
+} \fi
+
+\begin{abstract}
+% One paragraph, written to be readable by someone who reads nothing else:
+% the setting, the gap, the proposed estimand/method, what theory is
+% established, and one sentence each on simulations and the application.
+[Abstract placeholder.]
+\end{abstract}
+
+\noindent%
+{\it Keywords:} [keyword 1]; [keyword 2]; [keyword 3].
+\vfill
+
+\newpage
+\spacingset{1.45} % DON'T change the spacing!
+
+\section{Introduction}
+\label{sec:intro}
+% What the scientific setting is, what question existing methods answer,
+% and precisely why they fail for this one. End with a numbered list of
+% contributions and a roadmap of the paper. Cite generously — this section
+% positions the work relative to adjacent literatures.
+[Placeholder.]
+
+\section{Setup and Estimand}
+\label{sec:setup}
+% Define the observed data structure, potential outcomes, and the estimand
+% BEFORE any method details. State causal assumptions as numbered
+% \begin{assumption} environments. The reader should finish this section
+% knowing exactly what quantity the paper targets and under what conditions
+% it is well-defined.
+[Placeholder.]
+
+\begin{assumption}[Consistency, no interference, and sequential randomization]
+\label{ass:core}
+[Placeholder.]
+\end{assumption}
+
+\section{Identification}
+\label{sec:id}
+% Derive observed-data representations of the estimand under the stated
+% assumptions. Each representation is a theorem or proposition; proofs go
+% to the appendix. Explain what each representation buys (interpretation,
+% estimation strategy, variance properties).
+[Placeholder.]
+
+\section{Estimation}
+\label{sec:estimation}
+% Estimators built from the identification results: the simple/direct
+% estimator first, then augmented or cross-fitted refinements. Include the
+% large-sample theory (asymptotic normality, variance estimation) here or
+% in a dedicated subsection. Practical fitting details (cross-fitting
+% scheme, nuisance regressions) belong here, not the appendix.
+[Placeholder.]
+
+\section{Simulation Study}
+\label{sec:sims}
+% One subsection per study, mirroring the simulations/ subdirectories in
+% the repo — each answers a single named question (bias? coverage?
+% efficiency gain? robustness to X?). State the data-generating process,
+% the estimators compared, and the metric before showing tables.
+[Placeholder.]
+
+\section{Application}
+\label{sec:application}
+% The motivating data analysis. Describe the study, why the method fits,
+% results, and a sensitivity analysis. Numbers here must be reproducible
+% from the code repository.
+[Placeholder.]
+
+\section{Discussion}
+\label{sec:discussion}
+% Limitations, honest scope of the assumptions, and 2-3 concrete
+% directions for future work.
+[Placeholder.]
+
+\bibliographystyle{agsm}
+\bibliography{refs}
+
+\begin{appendices}
+
+\section{Proofs}
+\label{app:proofs}
+% One appendix section per main-text section that has results, in order.
+[Placeholder.]
+
+\section{Additional Simulation and Application Details}
+\label{app:extra}
+% Extra tables/figures, diagnostics, and anything reviewers may want but
+% readers don't need.
+[Placeholder.]
+
+\section{Code and Data Availability}
+\label{app:code}
+% Link the GitHub repository and state where the data live and how access
+% is governed (mirror data/README.md).
+[Placeholder.]
+
+\end{appendices}
+
+\end{document}

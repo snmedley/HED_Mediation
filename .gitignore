@@ -1,0 +1,15 @@
+data/*
+!data/README.md
+.Rhistory
+.RData
+.Rproj.user
+__pycache__/
+*.pyc
+.venv/
+renv/library/
+writing/*.aux
+writing/*.log
+writing/*.out
+writing/*.bbl
+writing/*.blg
+writing/*.synctex.gz

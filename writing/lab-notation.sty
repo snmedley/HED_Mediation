@@ -1,0 +1,69 @@
+% lab-notation.sty — shared notation for the Dempsey Lab
+% Usage: \usepackage{lab-notation}   (keep this file in the Overleaf project root)
+%
+% Purpose: symbols mean the same thing across lab projects. Extend it in your
+% project if needed, but do not redefine existing macros — if a definition
+% seems wrong, raise it in #lab-general so the fix propagates everywhere.
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{lab-notation}[2026/07/08 Dempsey Lab shared notation]
+
+\RequirePackage{amsmath, amssymb, amsthm, mathtools, bm}
+
+% ---------- Operators ----------
+\DeclareMathOperator{\E}{\mathbb{E}}          % expectation: \E[Y]
+\DeclareMathOperator{\Prob}{\mathbb{P}}       % probability: \Prob(A = 1)
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\logit}{logit}
+\DeclareMathOperator{\expit}{expit}
+\newcommand{\given}{\,|\,}                    % conditioning bar: \Prob(A \given H)
+
+% ---------- Sets & symbols ----------
+\newcommand{\reals}{\mathbb{R}}
+\newcommand{\naturals}{\mathbb{N}}
+\providecommand{\indep}{\perp\!\!\!\perp}     % (conditional) independence
+\newcommand{\iid}{\overset{\text{iid}}{\sim}}
+\newcommand{\convd}{\overset{d}{\rightarrow}}  % convergence in distribution
+\newcommand{\convp}{\overset{p}{\rightarrow}}  % convergence in probability
+
+% Indicator: \ind{A_t = 1}. Uses bbm's blackboard 1 when available,
+% bold 1 otherwise.
+\IfFileExists{bbm.sty}{\RequirePackage{bbm}}{}
+\ifdefined\mathbbm
+  \newcommand{\ind}[1]{\mathbbm{1}\{#1\}}
+\else
+  \newcommand{\ind}[1]{\mathbf{1}\{#1\}}
+\fi
+
+% ---------- Longitudinal / sequential structure ----------
+% Decision points t = 1, ..., T
+\newcommand{\A}{A}                            % treatment/action at decision point t: \A_t
+\newcommand{\X}{X}                            % context/covariates observed at t: \X_t
+\newcommand{\Y}{Y}                            % (proximal) outcome: \Y_{t+1}
+\newcommand{\Hist}{H}                         % history: \Hist_t = (\X_1, \A_1, ..., \X_t)
+\newcommand{\bbar}[1]{\bar{#1}}               % trajectory up to t: \bbar{\A}_t = (\A_1,...,\A_t)
+\newcommand{\avail}{I}                        % availability indicator at t: \avail_t
+
+% ---------- Potential outcomes & estimands ----------
+\newcommand{\pot}[2]{#1(#2)}                  % potential outcome: \pot{\Y_{t+1}}{\bbar{a}_t}
+\newcommand{\excursion}{\beta}                % causal excursion effect: \excursion(t; s)
+\newcommand{\randprob}{p_t}                   % randomization probability: \randprob(a \mid \Hist_t)
+\newcommand{\policy}{\pi}                     % (stochastic) policy / decision rule
+
+% ---------- Theorem environments ----------
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\endinput

@@ -2,10 +2,10 @@
 
 **Top-level goal:** [Crisp, one-sentence objective.]
 
-**DRI:** [Lead PhD student or postdoc]
+**DRI:** Sarah Ferlito
 **PI / high-level strategy:** Walter Dempsey
 **Primary communication:** [#project-channel]
-**Project Landing Page (single source of truth):** [Google Doc link]
+**Project Landing Page (single source of truth):** https://docs.google.com/document/d/1tI99LZd9KTIp7j38HoynZ-hggY42SgzpaPesOGG0lVU/edit?tab=t.0
 **Methodology working doc:** [Overleaf link]
 **Grant alignment:** [Link to relevant planning docs]
 

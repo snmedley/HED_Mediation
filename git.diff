@@ -1,0 +1,30 @@
+diff --git a/.DS_Store b/.DS_Store
+new file mode 100644
+index 0000000..8ff2526
+Binary files /dev/null and b/.DS_Store differ
+diff --git a/writing/main-causal.tex b/writing/main-causal.tex
+index df2f806..8f8316a 100644
+--- a/writing/main-causal.tex
++++ b/writing/main-causal.tex
+@@ -64,7 +64,7 @@
+     {\LARGE\bf [Project Title]}
+ 
+     \medskip
+-    [DRI] and W. Dempsey
++    S. Ferlito and W. Dempsey
+ 
+     Department of Biostatistics, University of Michigan, Ann Arbor, U.S.A.
+   \end{center}
+diff --git a/writing/main.tex b/writing/main.tex
+index fa778e7..36e9d53 100644
+--- a/writing/main.tex
++++ b/writing/main.tex
+@@ -64,7 +64,7 @@
+     {\LARGE\bf Hybrid Design and Mediation Analysis}
+ 
+     \medskip
+-    [DRI] and W. Dempsey
++    S. Ferlito and W. Dempsey
+ 
+     Department of Biostatistics, University of Michigan, Ann Arbor, U.S.A.
+   \end{center}
